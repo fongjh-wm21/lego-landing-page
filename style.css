@@ -1,0 +1,265 @@
+/* General fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-section, .mission-section, .features-section, .footer-section {
+  animation: fadeInUp 1s ease both;
+}
+
+/* Card hover effect */
+.feature-card {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+  border-radius: 16px;
+  background: #e6f0fa;
+}
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  background: #d0e6fa;
+}
+
+/* Hero image animation */
+.hero-img {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .hero-section .row {
+    flex-direction: column-reverse;
+  }
+  .hero-img {
+    max-width: 220px;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar-brand img {
+    height: 32px;
+  }
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+  .footer-section .row > div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Footer social icons */
+.footer-section {
+  background: #2d2653 !important;
+  font-size: 1.08rem;
+}
+.footer-section .row > div {
+  margin-bottom: 0;
+}
+.footer-section .navbar-brand img,
+.footer-section img[alt="LEGO Logo"] {
+  height: 60px !important;
+}
+.footer-section .d-flex.align-items-center span {
+  font-size: 1rem;
+  font-weight: 500;
+  background: #29223e;
+  color: #fff;
+  margin-left: 0.2rem;
+}
+.footer-section .d-flex.align-items-center img {
+  background: #29223e;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+.footer-section ul li {
+  margin-bottom: 0.7rem;
+}
+.footer-section ul {
+  margin-bottom: 1.2rem;
+}
+.footer-section h6 {
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+.footer-section .fw-bold {
+  font-weight: 700 !important;
+}
+.footer-section .border-top {
+  border-color: #3d3660 !important;
+}
+.footer-section .fa-facebook-f,
+.footer-section .fa-x-twitter,
+.footer-section .fa-instagram,
+.footer-section .fa-youtube {
+  font-size: 1.6rem;
+  margin-top: 0.2rem;
+}
+.footer-section .d-flex.gap-3 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #241f3a;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.footer-section .d-flex.gap-3 a:hover {
+  background: #fff;
+}
+.footer-section .d-flex.gap-3 a:hover .fa-facebook-f { color: #1877f3; }
+.footer-section .d-flex.gap-3 a:hover .fa-x-twitter { color: #1da1f2; }
+.footer-section .d-flex.gap-3 a:hover .fa-instagram { color: #e4405f; }
+.footer-section .d-flex.gap-3 a:hover .fa-youtube { color: #ff0000; }
+.footer-section .location-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #29223e;
+}
+.footer-section .location-icon i {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+@media (max-width: 991.98px) {
+  .footer-section .row > div {
+    margin-bottom: 2rem;
+  }
+  .footer-section .d-flex.flex-md-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem;
+  }
+  .footer-section .d-flex.gap-3 {
+    justify-content: flex-start !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer-section {
+    font-size: 0.98rem;
+  }
+  .footer-section .d-flex.gap-3 {
+    justify-content: center !important;
+  }
+  .footer-section .fw-bold {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Button animation */
+.btn-dark {
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-dark:hover {
+  background: #ffcf00;
+  color: #222;
+  transform: scale(1.05);
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('Resources/Main Banner.png') center right/cover no-repeat;
+  z-index: 1;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: background-size 0.4s;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+.hero-section h2,
+.hero-section p,
+.hero-section .btn {
+  color: #222;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.7);
+}
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 260px;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .hero-bg {
+    background-position: center top;
+  }
+}
+@media (max-width: 575.98px) {
+  .hero-section {
+    min-height: 180px;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .hero-bg {
+    background-size: cover;
+    opacity: 0.92;
+  }
+}
+
+.footer-social-row {
+  margin-top: 2rem;
+}
+.footer-social-row .follow-label {
+  text-align: right;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 991.98px) {
+  .footer-social-row .d-flex.flex-column.align-items-end {
+    align-items: center !important;
+    width: 100%;
+  }
+  .footer-social-row .follow-label {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.hero-section .btn.btn-dark {
+  background: rgba(34,34,34,0.92);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.10);
+  padding: 0.75rem 2.2rem;
+  font-size: 1.18rem;
+  border-radius: 2rem;
+  position: relative;
+  z-index: 2;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.hero-section .btn.btn-dark:hover {
+  background: #ffcf00;
+  color: #222;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transform: scale(1.06);
+} 
